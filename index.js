@@ -92,9 +92,6 @@ class listr {
                     return
                 }
 
-          
-                
-
 
                 // add selected class to the clicked item
                 ev.target.classList.add('selected')
@@ -137,6 +134,46 @@ class listr {
                 dropdown.classList.remove('active')
             })
             dropdownList.appendChild(item)
+
+            //if item has selected select item
+            if(this.options.data[i].selected){
+                //hide fauxinput text
+                fauxInputText.style.display = 'none'
+                
+                item.classList.add('selected')
+                const pill = document.createElement('span')
+                pill.classList.add('listr-pill')
+                pill.setAttribute('value',this.options.data[i].value)
+                pill.innerText = this.options.data[i].text
+                
+                const close = document.createElement('span')
+                close.classList.add('listr-close')
+                close.setAttribute('x',newID)
+                close.addEventListener('click', (ev)=>{
+                    item.classList.remove('selected')
+                    ev.target.parentNode.remove()
+                    if(fauxInput.children.length === 1){
+                        fauxInputText.style.display = 'block'
+                    }
+
+                    //reset the value of this.element
+                    let selectedValues = []
+                    document.querySelectorAll('.listr-pill').forEach((pill)=>{
+                        selectedValues.push(pill.getAttribute('value'))
+                    })
+                    this.element.value = selectedValues
+                })
+
+                pill.appendChild(close)
+                fauxInput.appendChild(pill)
+
+                //set value of this.element to be an array of selected values
+                let selectedValues = []
+                document.querySelectorAll('.listr-pill').forEach((pill)=>{
+                    selectedValues.push(pill.getAttribute('value'))
+                })
+                this.element.value = selectedValues
+            }
         }
         container.appendChild(dropdown)
 
