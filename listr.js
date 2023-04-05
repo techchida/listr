@@ -67,6 +67,32 @@ class listr {
         dropdownList.classList.add('listr-dropdown-list')
         dropdown.appendChild(dropdownList)
 
+        //if this.options.data does not exist ot this.element is a select element create a data element from  the options of the select
+        if(this.options.data === undefined || this.element.tagName === 'SELECT'){
+            this.options.data = []
+            for(let i = 0; i < this.element.options.length; i++){
+                this.options.data.push({
+                    text: this.element.options[i].text,
+                    value: this.element.options[i].value,
+                    selected: this.element.options[i].selected
+                })
+            }
+        }
+
+        //if this.options.data does not exist and this.element is not a select element 
+        if(this.options.data === undefined && this.element.tagName !== 'SELECT'){
+            //create no data text 
+            const noData = document.createElement('div')
+            noData.classList.add('listr-no-data')
+            noData.innerText = this.options.lang?.noData || 'Nothing to show'
+            dropdownList.appendChild(noData)
+            container.appendChild(dropdown)
+            
+            console.error('listr.js: data is not defined')
+            return
+        }
+
+
         for( let i in this.options.data){
             //create random id
             const newID = Math.random().toString(36).substr(2, 9);
