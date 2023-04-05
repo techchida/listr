@@ -1,0 +1,29 @@
+{
+  "name": "listr",
+  "version": "1.0.0",
+  "description": "custom html select input",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techchida/listr.git"
+  },
+  "keywords": [
+    "html",
+    "tags",
+    "input",
+    "select",
+    "search"
+  ],
+  "author": "Henry Chida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techchida/listr/issues"
+  },
+  "homepage": "https://github.com/techchida/listr#readme",
+  "dependencies": {
+    "typescript": "^5.0.3"
+  }
+}
