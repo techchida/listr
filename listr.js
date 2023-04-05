@@ -47,13 +47,18 @@ class listr {
             }
         })
 
+        // create searchbar container 
+        const searchBarContainer = document.createElement('div')
+        searchBarContainer.classList.add('listr-search-bar-container')  
+        container.appendChild(searchBarContainer)
+
         // search bar 
         const searchBar = document.createElement('input')
         searchBar.setAttribute('contenteditable', true)
         searchBar.classList.add('listr-search-bar')
         searchBar.setAttribute('placeholder', this.options.lang?.searchText  || 'Search')
-        container.appendChild(searchBar)
-
+        searchBarContainer.appendChild(searchBar)
+        
         // dropdown list
         const dropdown = document.createElement('div')
         dropdown.classList.add('listr-dropdown')
@@ -139,7 +144,7 @@ class listr {
             if(this.options.data[i].selected){
                 //hide fauxinput text
                 fauxInputText.style.display = 'none'
-                
+
                 item.classList.add('selected')
                 const pill = document.createElement('span')
                 pill.classList.add('listr-pill')
@@ -176,6 +181,7 @@ class listr {
             }
         }
         container.appendChild(dropdown)
+        
 
         //create a search function for all items in dropdown 
         searchBar.addEventListener('keyup', (ev)=>{
