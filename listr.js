@@ -274,6 +274,8 @@ const listr = class {
       });
     };
 
-    loadStyle("./listr.css").then(() => this.build());
+    loadStyle("https://cdn.jsdelivr.net/gh/techchida/listr/listr.min.css").then(
+      () => this.build()
+    );
   }
 };
