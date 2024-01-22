@@ -4,24 +4,30 @@ listrJS v1. by Chida
 
 .listr-search-bar {
     padding: 0 14px;
-    border-radius: 4px;
+    border-radius: 8px;
     margin: 10px;
     width: 100%;
-    height: 30px;
-    border: 1px solid #666;
+    height: 25px;
+        border: 1px solid #ddd;
     display: flex;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     align-items: center;
+    outline: #7dabfb;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
 }
 
 
 .listr-container {
     border-radius: 4px;
-    margin-top:14px;
-    border: 1px solid #6c6c6c;
+    margin-top: 8px;
+        border: 1px solid #ddd;
     width: inherit;
     position: absolute;
     display: none;
+    background-color: #fff;
 }
 
 .listr-container.active {
@@ -29,33 +35,38 @@ listrJS v1. by Chida
 }
 
 .listr-container .listr-item{
-    padding: 8px 14px;
+    padding: 5px 14px;
     cursor: pointer;
+    font-size: 14px;
 }
 
-.listr-container .listr-item:hover, .listr-container .listr-item.selected  {
-    background: #397ef7;
-    color:#fff;
+.listr-container .listr-item:hover {
+    color: #7dabfb;
 }
+
 
 .listr-pill {
-    padding: 0 6px;
+    padding: 2px 6px;
     margin:1px;
     border-radius: 10px;
-    background: #397ef7;
+    background: #7dabfb;
     color:#fff;
     display: flex;
-    
+    font-size: 13px;
+        display: flex;
+        align-items: center;
 }
 
 .listr-item.selected {
-    opacity: .5;
+    color: #7dabfb;
 }
 
 .listr-pill .listr-close {
     padding-top:2px;
+        display: flex;
+            align-items: center;
     color: #fff;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-top: -5px;
     cursor: pointer;
 }
@@ -63,34 +74,40 @@ listrJS v1. by Chida
 /* create a close icon  */
 .listr-close::after {
     content: "×";
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 
 .listr-faux-input {
-    min-height: 36px;
+    min-height: 30px;
     border-radius: 4px;
-    padding: 3px 0;
+    padding: 2px 0px;
     flex-wrap: wrap;
-    border: 1px solid #6c6c6c;
+    border: 1px solid #ddd;
     align-items: center;
     display: flex;
     font-family: system-ui;
     width: inherit;
     cursor: pointer;
+    gap: .5rem;
+        /* background: #fff; */
 }
 
 .listr-faux-input-text {
     padding: 0 14px;
     z-index: -1;
-    font-size: .9em;
+        font-size: 12px;
+            opacity: .9;
 }
 
 .listr{
     width: 400px;
 }
 
+.listr-dropdown {
+    padding: 0px 10px 15px 10px;
+}
 .listr-dropdown-list{
     max-height: 300px;
     overflow-y: scroll;
