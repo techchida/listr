@@ -1,10 +1,11 @@
 {
-  "name": "listr",
+  "name": "@techchida/listr",
   "version": "1.0.0",
   "description": "custom html select input",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "test": "start",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
@@ -18,12 +19,16 @@
     "search"
   ],
   "author": "Henry Chida",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/techchida/listr/issues"
   },
   "homepage": "https://github.com/techchida/listr#readme",
-  "dependencies": {
-    "typescript": "^5.0.3"
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "directories": {
+    "test": "test"
   }
 }
