@@ -4,7 +4,13 @@ Build simple and fluid HTML select dropdowns with **ListR**
 
 ## Getting Started
 
-Listr  can be used by including the javascript in your code 
+Listr  can be used by importing through cdn 
+
+    <script src="https://cdn.jsdelivr.net/gh/techchida/listr/listr.min.js"> </script>
+    
+
+or by importing locally
+
 
     <script src="./path_to/listr.js"> </script>
 
